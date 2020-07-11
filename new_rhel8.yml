@@ -24,3 +24,9 @@
       user: cloud_user
       state: present
       key: https://github.com/SebastianThorn.keys
+
+  - name: Ensure SELinux is set to enforcing mode
+    lineinfile:
+      path: /etc/sudoers.d/90-cloud-init-users
+      regexp: '^cloud_user'
+      line: cloud_user ALL=(ALL) NOPASSWD:ALL
