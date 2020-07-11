@@ -8,7 +8,6 @@
   - name: Install specific packages
     dnf:
       name:
-        - https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
         - emacs-nox
         - git-core
         - procps-ng
