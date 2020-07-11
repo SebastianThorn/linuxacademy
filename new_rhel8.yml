@@ -1,0 +1,19 @@
+---
+
+- name: Base rhel8 install
+  hosts: localhost
+  become: true
+
+  tasks:
+  - name: Update all packages
+    dnf:
+      name: "*"
+      state: latest
+
+  - name: Install packages
+    dnf:
+      name:
+        - emacs-nox
+        - git-core
+        - procps-ng
+        - tmux
