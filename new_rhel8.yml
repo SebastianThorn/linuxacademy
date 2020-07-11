@@ -3,6 +3,7 @@
 - name: Base rhel8 install
   hosts: localhost
   become: true
+  gather_facts: false
 
   tasks:
   - name: Update all packages
