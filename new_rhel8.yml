@@ -1,7 +1,7 @@
 ---
 
 - name: Base rhel8 install
-  hosts: localhost
+  hosts: localhost,all
   become: true
   gather_facts: false
   tasks:
