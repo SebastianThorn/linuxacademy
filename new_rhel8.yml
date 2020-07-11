@@ -25,7 +25,7 @@
       state: present
       key: https://github.com/SebastianThorn.keys
 
-  - name: Ensure SELinux is set to enforcing mode
+  - name: Remove need for password for cloud_user
     lineinfile:
       path: /etc/sudoers.d/90-cloud-init-users
       regexp: '^cloud_user'
