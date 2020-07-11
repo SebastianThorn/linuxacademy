@@ -5,22 +5,22 @@
   become: true
   gather_facts: false
   tasks:
-    - name: Install specific packages
-      dnf:
-        name:
-          - https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
-          - emacs-nox
-          - git-core
-          - procps-ng
-          - tmux
+  - name: Install specific packages
+    dnf:
+      name:
+        - https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+        - emacs-nox
+        - git-core
+        - procps-ng
+        - tmux
 
-    - name: Update all packages
-      dnf:
-        name: "*"
-        state: latest
+  - name: Update all packages
+    dnf:
+      name: "*"
+      state: latest
 
-    - name: Set authorized keys taken from url
-      authorized_key:
-        user: cloud_user
-        state: present
-        key: https://github.com/SebastianThorn.keys
+  - name: Set authorized keys taken from url
+    authorized_key:
+      user: cloud_user
+      state: present
+      key: https://github.com/SebastianThorn.keys
